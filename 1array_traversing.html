@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY TRAVERSING</title>
+</head>
+<body>
+    <h1>ARRAY TRAVERSING</h1>
+
+    <h4></h4>
+
+    <input type="number" id="element" />
+    <button onclick="getElement()">Get Element</button>
+    
+</body>
+</html>
+
+<script>
+    let data =[9, 45, 68, 0, 54, 77, 97, 56];
+
+    document.querySelector("h4").innerHTML = data;
+
+    // for(i=0; i<data.length; i++){
+    //     document.write(`Array of ${i} is ${data[i]} <br>`);
+    // }
+
+    // let x = 4;
+    // document.write(data[x])
+
+    const getElement = () =>{
+        // alert("clicked")
+
+        let el = document.getElementById("element").value;
+        // // alert(el);
+        // alert(data[el]);
+
+        if(el<data.length && el>=0 ){
+            alert(`Array of ${el} is ${data[el]}`);
+        }
+        else{
+            alert("Please enter valid input")
+        }
+    }
+</script>
