@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INSERT ELEMENT IN ARRAY</title>
+  </head>
+  <body>
+    <h1>INSERT ELEMENT IN ARRAY (SPLICE)</h1>
+    <p>data.splice(a , b , c)</p>
+    <p>a = position (insert in which position)</p>
+    <p>b = no. of elements to be deleted</p>
+    <p>c = new element (insert what element)</p>
+
+    <h4 id="array"></h4>
+
+    <input type="number" placeholder="Enter position" id="position" />
+    <input type="text" placeholder="Enter new element" id="newEl" />
+
+    <button onclick="insertEl()">Enter</button>
+    <button onclick="reset()">Reset</button>
+
+    <h4 id="newArray"></h4>
+
+  </body>
+</html>
+<script>
+  let data = [10, 20, 30, 40, 50];
+  // let newEl = 70;
+  // let position = 2;
+
+  document.getElementById("array").innerHTML = data;
+
+  // for (let i=data.length-1; i>=0; i--){
+  //     // console.log(data[i]);
+  //     if(i>=position){
+  //         data[i+1] = data[i];
+
+  //         if(i==position){
+  //         data[i] = newEl;
+  //     }
+  //     }
+
+  // }
+
+  const insertEl = () => {
+    data = [10, 20, 30, 40, 50];
+    console.log(data);
+    newEl = document.getElementById("newEl").value;
+    newEl = parseInt(newEl);
+    position = document.getElementById("position").value;
+
+    if (position >= 0 && position < data.length) {
+      for (let i = data.length - 1; i >= 0; i--) {
+        //   console.log(data[i]);
+        if (i >= position) {
+          data[i + 1] = data[i];
+
+          if (i == position) {
+            data[i] = newEl;
+          }
+        }
+        document.getElementById("newEl").value = "";
+        document.getElementById("position").value = "";
+      }
+      console.log(data);
+      document.getElementById("newArray").innerHTML = data;
+    }
+    else{
+        alert("Please enter valid postion")
+    }
+  };
+
+  const reset = () => {
+    document.getElementById("newArray").innerHTML = "";
+  };
+</script>
