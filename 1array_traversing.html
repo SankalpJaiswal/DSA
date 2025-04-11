@@ -8,7 +8,7 @@
 <body>
     <h1>ARRAY TRAVERSING</h1>
 
-    <h4></h4>
+    <h4 id="array"></h4>
 
     <input type="number" id="element" />
     <button onclick="getElement()">Get Element</button>
@@ -19,7 +19,7 @@
 <script>
     let data =[9, 45, 68, 0, 54, 77, 97, 56];
 
-    document.querySelector("h4").innerHTML = data;
+    document.getElementById("array").innerHTML = data;
 
     // for(i=0; i<data.length; i++){
     //     document.write(`Array of ${i} is ${data[i]} <br>`);
@@ -41,5 +41,8 @@
         else{
             alert("Please enter valid input")
         }
+
+        // clears the input field after clicking button 
+        document.getElementById("element").value = "";
     }
 </script>
