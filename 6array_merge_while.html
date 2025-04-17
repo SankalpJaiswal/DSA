@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRAY MERGE - WHILE</title>
+  </head>
+  <body>
+    <h1>ARRAY MERGE (WHILE LOOP) WITH SORTING</h1>
+    <h4>For this, input arrays should be sorted</h4>
+
+    <h4 id="array1"></h4>
+    <h4 id="array2"></h4>
+  </body>
+</html>
+
+<script>
+  let data1 = [10, 30, 60, 80, 90];
+  let data2 = [20, 40, 50, 70];
+
+  document.getElementById("array1").innerHTML = data1;
+  document.getElementById("array2").innerHTML = data2;
+
+  let bag = [];
+  let d1 = 0;
+  let d2 = 0;
+  let b = 0;
+
+  //   For this, input arrays should be sorted
+
+  while (d1 < data1.length && d2 < data2.length) {
+    if (data1[d1] < data2[d2]) {
+      bag[b] = data1[d1];
+      // b++;
+      d1++;
+    } else {
+      bag[b] = data2[d2];
+      // b++;
+      d2++;
+    }
+
+    b++;
+  }
+
+// Remaining elements from data1
+while (d1 < data1.length) {
+  bag[b] = data1[d1];
+  b++;
+  d1++;
+}
+
+// Remaining elements from data2
+while (d2 < data2.length) {
+  bag[b] = data2[d2];
+  b++;
+  d2++;
+}
+
+  console.log(bag);
+  
+</script>
