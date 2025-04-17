@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERGE 2 ARRAY</title>
+  </head>
+  <body>
+    <h1>MERGE 2 ARRAY</h1>
+
+    <h4 id="array1"></h4>
+    <h4 id="array2"></h4>
+
+    <p>REVERSE  --------------  data.reverse()</p>
+    <p>MERGE  --------------  bag = [...data1, ...data2]</p>
+    
+  </body>
+</html>
+
+<script>
+  let data1 = [10, 20, 30, 40];
+  let data2 = [50, 60, 70, 80];
+
+  document.getElementById("array1").innerHTML = data1;
+  document.getElementById("array2").innerHTML = data2;
+
+  let bag = [];
+
+  for (let i = 0; i < data1.length; i++) {
+    // bag.push(data1[i]);
+    bag[i] = data1[i];
+  }
+
+  for (let i = 0; i < data2.length; i++) {
+    // bag.push(data2[i])
+    bag[data1.length + i] = data2[i];
+  }
+
+  console.log(bag);
+</script>
