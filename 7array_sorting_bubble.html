@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY SORTING (BUBBLE SORT)</title>
+</head>
+<body>
+    <h1>ARRAY SORTING (BUBBLE SORT)</h1>
+
+    <h4 id="array"></h4>
+
+    <h4 id="newArray"></h4>
+    
+</body>
+</html>
+
+<script>
+    let data = [40,30,20,10,50,70,60,90,80];
+
+    document.getElementById("array").innerHTML = data;
+
+    const swap = (a,b) =>{
+        let temp = data[a];
+        data[a] = data[b];
+        data[b] = temp;
+    }
+
+
+    for(let i=0; i<data.length; i++){
+        for(let j=0; j<data.length; j++){
+            if(data[j] > data[j+1]){
+                // SWAP
+                // let temp = data[j];
+                // data[j] = data[j+1];
+                // data[j+1] = temp;
+
+                swap(j, j+1)
+            }
+        }
+        
+    }
+
+
+    console.log(data);
+    document.getElementById("newArray").innerHTML = data
+
+</script>
