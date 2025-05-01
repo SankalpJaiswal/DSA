@@ -19,8 +19,22 @@ https://www.tpointtech.com/data-structure-asymptotic-analysis
 
 <hr>
 
-**Recursion** --> function called inside function with proper condition to avoid infinite loop <br>
+**Recursion (Direct Recursion)** --> function called inside function with proper condition to avoid infinite loop <br>
 function apple = () =>{ <br>
-    apple(); <br>
-    (with proper condition)
+&emsp;    apple(); <br>
+&emsp;    (with proper condition)
 }
+
+<hr>
+
+**Indirect Recursion** --> <br>
+function apple = () =>{ <br>
+&emsp;    banana () <br>
+} <br>
+
+<br>
+
+function banana = () =>{ <br>
+&emsp;    apple() <br>
+}
+

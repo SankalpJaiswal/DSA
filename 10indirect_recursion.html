@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIRECT RECURSION</title>
+</head>
+<body>
+    <h1>INDIRECT RECURSION</h1>
+    
+</body>
+</html>
+
+<script>
+    let money = 100;
+    let apple = 0;
+    // Rate is 10 rs per apple
+
+    const buyApple = (money) => {
+        // if(money > 0){
+        //     apple++;
+        //     money--;
+        //     buyApple(money)
+        // }
+        if(money>9){
+            apple++;
+            money = money-10;
+            console.log(`apple= ${apple}`);           
+            buyMore(money)
+        }
+        else{
+            console.warn("don't have enough money");
+            
+        }
+    }
+
+    const buyMore = (money) =>{
+        console.log(`You can buy more ${money/10}`);
+        buyApple(money)
+    }
+
+    buyApple(money);
+
+    
+</script>
