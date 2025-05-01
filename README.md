@@ -22,7 +22,7 @@ https://www.tpointtech.com/data-structure-asymptotic-analysis
 **Recursion (Direct Recursion)** --> function called inside function with proper condition to avoid infinite loop <br>
 function apple = () =>{ <br>
 &emsp;    apple(); <br>
-&emsp;    (with proper condition)
+&emsp;    (with proper condition) <br>
 }
 
 <hr>
