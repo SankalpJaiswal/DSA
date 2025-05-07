@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRAY REVERSE BY RECURSION</title>
+  </head>
+  <body>
+    <h1>ARRAY REVERSE BY RECURSION</h1>
+    <h4 id="array"></h4>
+
+    <p>data.reverse()</p>
+  </body>
+</html>
+
+<script>
+  let data = [10, 8, 56, 45, 66, 9, 21];
+  document.getElementById("array").innerHTML = data
+
+  const swap = (i, j) =>{
+    let temp = data[i];
+      data[i] = data[j];
+      data[j] = temp;
+  }
+
+  const reverse = (data, start, end) => {
+    if (start <= end) {
+      swap(start, end);
+      reverse(data, start + 1, end - 1);
+    }
+  };
+
+  reverse(data, 0, data.length - 1);
+  console.log(data);
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEAD AND TAIL RECURSION</title>
+  </head>
+  <body>
+    <h1>HEAD AND TAIL RECURSION</h1>
+  </body>
+</html>
+<script>
+
+  const colors = () => {
+    let data = 20;
+    console.log(data);
+
+    if(true){
+        console.log("yes");
+    }
+    else{
+        console.log("no");
+    }
+  };
+
+  const days = () => {
+    colors();
+  };
+
+  const fruits = () => {
+    days();
+  };
+
+  const topFunction = () => {
+    fruits();
+  };
+
+  topFunction();
+
+  const test = (x) =>{
+    console.log(x);           //Head Recursion
+
+    if(x>0){
+      test(x-1)
+    }
+
+    console.log(x);           //Tail Recursion
+    
+  }
+
+  let data = 5;
+  test(data)
+</script>
