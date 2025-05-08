@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACK WITH INPUTS</title>
+  </head>
+  <body>
+    <h1>STACK WITH INPUTS</h1>
+
+    <input type="text" placeholder="Enter Element" id="newEl">
+    <button onclick="push()">ADD ELEMENT</button>
+    <button onclick="pop()">REMOVE ELEMENT</button>
+    <button onclick="display()">DISPLAY ELEMENTS</button>
+
+  </body>
+</html>
+
+<script>
+  let data = [];
+  let maxSize = 7;
+  let currentSize = data.length;
+
+  const push = () => {
+
+    let x = document.getElementById("newEl").value;
+
+    if (currentSize < maxSize) {
+      data[currentSize] = x;
+      currentSize++;
+      alert(`Element ${x} Added`)
+    }
+    else{
+        alert(`Can't add ${x} as Max Size of Stack os Reached`)
+    }
+
+    document.getElementById("newEl").value = ""
+  };
+
+  const pop = () =>{
+    if(currentSize > 0){
+        currentSize--;
+        data.length = currentSize;
+        alert(`Last Element Removed`)
+    }
+    else{
+        alert(`Stack is already Empty`)
+    }
+  }
+
+  const display = () =>{
+    console.log(data);
+    
+  }
+</script>

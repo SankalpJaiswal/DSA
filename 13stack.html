@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACK</title>
+  </head>
+  <body>
+    <h1>STACK</h1>
+  </body>
+</html>
+
+<script>
+  let data = [];
+  let currentSize = data.length;
+  let maxSize = 7;
+
+  const push = (x) => {
+    if (currentSize < maxSize) {
+      data[currentSize] = x;
+      currentSize++;
+    }
+    else{
+        alert(`Exceeding Max Size of Stack, can't add ${x}`)
+    }
+  };
+
+  const pop = (x) =>{
+    if(currentSize > 0){
+        currentSize--;
+        data.length = currentSize
+    }
+    else{
+        alert("Already Stack is Empty")
+    }
+  }
+
+  push(20);
+  push(88);
+  push(34);
+  push(66);
+  push(9);
+  push(65);
+  push(47);
+//   push(38);
+//   push(14);
+  pop();
+  pop();
+  pop();
+  pop();
+  pop();
+//   pop();
+//   pop();
+//   pop();
+  push(38);
+  push(14);
+
+  console.log(data);
+  console.log(currentSize);
+</script>
