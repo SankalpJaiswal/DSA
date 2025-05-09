@@ -49,5 +49,9 @@ function banana = () =>{        <br>
 
 <hr>
 
+**Class Component -->** Whenever we call Class component, 'Constructor' is called first
+
+<hr>
+
 
 

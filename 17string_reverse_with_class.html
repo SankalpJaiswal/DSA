@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRING REVERSE WITH CLASS</title>
+  </head>
+  <body>
+    <h1>STRING REVERSE WITH CLASS</h1>
+  </body>
+</html>
+<script>
+  class String {
+    string;
+    answer;
+    currentLength;
+
+    constructor(item) {
+      this.string = item;
+      this.answer = [];
+      this.currentLength = 0;
+    }
+
+    push(x) {
+      this.answer[this.currentLength] = x;
+      this.currentLength++;
+    }
+
+    stringReverse() {
+      console.log(this.string);
+      this.string = this.string.split("");
+      console.log(this.string);
+
+      for (let i = this.string.length - 1; i >= 0; i--) {
+        this.push(this.string[i]);
+      }
+
+      console.log(this.answer);
+      console.log(this.answer.join(""));
+    }
+  }
+
+  str = new String("sankalp");
+  str.stringReverse();
+</script>

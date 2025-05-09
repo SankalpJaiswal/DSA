@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACK WITH CLASS</title>
+  </head>
+  <body>
+    <h1>STACK WITH CLASS</h1>
+  </body>
+</html>
+
+<script>
+  class Stack {
+    data = [];
+    currentSize;
+    maxSize;
+
+    constructor(n) {
+      // this is called sabse first --> 'constructor'
+      this.maxSize = n;
+      this.currentSize = this.data.length;
+    }
+
+    push(x) {
+      if (this.currentSize < this.maxSize) {
+        this.data[this.currentSize] = x;
+        this.currentSize++;
+      } else {
+        alert(`Can't add ${x} as stack is full`);
+      }
+    }
+
+    pop() {
+      if (this.currentSize > 0) {
+        this.currentSize--;
+        this.data.length = this.currentSize;
+      } else {
+        alert(`Stack is already empty`);
+      }
+    }
+
+    display() {
+      console.log(this.data);
+    }
+  }
+
+  st1 = new Stack(7);
+
+  st1.push(20);
+  st1.push(40);
+  st1.push(60);
+  st1.push(70);
+  st1.push(10);
+  st1.push(30);
+  st1.push(90);
+  st1.push(88);
+
+  st1.pop();
+  st1.push(88);
+  st1.pop();
+  st1.pop();
+  st1.pop();
+  st1.pop();
+  st1.pop();
+  st1.pop();
+  st1.pop();
+  st1.pop();
+
+  st1.display();
+</script>

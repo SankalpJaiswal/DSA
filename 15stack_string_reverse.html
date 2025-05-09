@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVERSE STRING WITH STACK</title>
+</head>
+<body>
+    <h1>REVERSE STRING WITH STACK</h1>
+    
+</body>
+</html>
+
+<script>
+
+    let str = "sankalp";
+    str = str.split("");        // converting into ARRAY []
+
+    let data = [];
+    let currentSize = data.length;
+
+
+    const push = (x) =>{
+        data[currentSize] = x;
+        currentSize++;
+    }
+
+    const pop = () =>{
+        currentSize--;
+        data.length = currentSize;
+    }
+
+    const reverseStr = (item) =>{
+        // console.log(item);
+        for(let i=item.length-1; i>=0; i--){
+            push(item[i])
+        }    
+    }
+    
+    
+    // console.log(str);
+
+    reverseStr(str)
+    console.log(data);
+    console.log(data.join(""));         // converting into STRING ""
+    
+    
+
+</script>
