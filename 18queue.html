@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUEUE</title>
+  </head>
+  <body>
+    <h1>QUEUE</h1>
+
+    <p>ENQUEUE --> queue.push(n)</p>
+    <p>DEQUEUE --> queue.shift()</p>
+  </body>
+</html>
+
+<script>
+  let queue = [];
+  let currentSize = queue.length;
+  let maxSize = 7;
+
+  const enqueue = (x) => {
+    if (currentSize < maxSize) {
+      queue[currentSize] = x;
+      currentSize++;
+    } else {
+      alert(`Can't add ${x} as max size of queue reached`);
+    }
+  };
+
+  const dequeue = () => {
+    if (currentSize > 0) {
+      for(let i=0; i<queue.length; i++){
+        queue[i] = queue[i+1]
+      }
+      currentSize--;
+      queue.length = currentSize
+    } else {
+      alert(`Queue is already empty`);
+    }
+  };
+
+  const display = () => {
+    console.log(queue);
+  };
+
+  enqueue(10);
+  enqueue(20);
+  enqueue(30);
+  enqueue(40);
+  enqueue(50);
+  enqueue(60);
+  enqueue(70);
+  dequeue();
+  enqueue(80);
+  dequeue();
+  enqueue(90);
+//   enqueue(11);
+  dequeue();
+  dequeue();
+  dequeue();
+  dequeue();
+  dequeue();
+  dequeue();
+  dequeue();
+//   dequeue();
+
+  display();
+</script>
