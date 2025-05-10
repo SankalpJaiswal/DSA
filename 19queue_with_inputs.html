@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QUEUE</title>
+    <title>QUEUE WITH INPUTS</title>
   </head>
   <body>
-    <h1>QUEUE</h1>
+    <h1>QUEUE WITH INPUTS</h1>
 
-    <p>ENQUEUE --> queue.push(n)</p>
-    <p>DEQUEUE --> queue.shift()</p>
+    <input type="text" placeholder="Enter Element" id="newEl" />
+    <button onclick="enqueue()">ADD ELEMENT</button>
+    <br><br>
+    <button onclick="dequeue()">REMOVE ELEMENT FROM FRONT</button>
+    <button onclick="pop()">REMOVE ELEMENT FROM REAR</button>
+    <br><br>
+    <button onclick="front()">FRONT ELEMENT</button>
+    <button onclick="rear()">REAR ELEMENT</button>
+    <br><br>
+    <button onclick="display()">DISPLAY</button>
   </body>
 </html>
 
@@ -18,38 +26,43 @@
   let currentSize = queue.length;
   let maxSize = 7;
 
-  const enqueue = (x) => {
+  const enqueue = () => {
+    let x = document.getElementById("newEl").value;
     if (currentSize < maxSize) {
       queue[currentSize] = x;
       currentSize++;
+      alert(`${x} added in queue`)
     } else {
       alert(`Can't add ${x} as max size of queue reached`);
     }
+    document.getElementById("newEl").value=""
   };
 
   const dequeue = () => {
-    if (currentSize > 0) {
+    if (notEmpty()) {
       for (let i = 0; i < queue.length; i++) {
         queue[i] = queue[i + 1];
       }
       currentSize--;
       queue.length = currentSize;
+      alert(`Removed first element`)
     } else {
       alert(`Queue is already empty`);
     }
   };
 
   const pop = () => {
-    if (currentSize > 0) {
+    if (notEmpty()) {
       currentSize--;
       queue.length = currentSize;
+      alert(`Removed last element`)
     } else {
       alert(`Queue is already empty`);
     }
   };
 
   const front = () => {
-    if (currentSize > 0) {
+    if (notEmpty()) {
       console.log(queue[0]);
     } else {
       console.log(`Queue is empty`);
@@ -57,60 +70,22 @@
   };
 
   const rear = () => {
-    if (currentSize > 0) {
-      console.log(queue[currentSize-1]);
+    if (notEmpty()) {
+      console.log(queue[currentSize - 1]);
     } else {
       console.log("Queue is empty");
+    }
+  };
+
+  const notEmpty = () => {
+    if (currentSize > 0) {
+      return true;
+    } else {
+      return false;
     }
   };
 
   const display = () => {
     console.log(queue);
   };
-
-  enqueue(10);
-  enqueue(20);
-  enqueue(30);
-  // enqueue(40);
-  // enqueue(50);
-  // enqueue(60);
-  // enqueue(70);
-  // dequeue();
-  // enqueue(80);
-  // dequeue();
-  // enqueue(90);
-  //   enqueue(11);
-  // dequeue();
-  // dequeue();
-  // dequeue();
-  // dequeue();
-  // dequeue();
-  // dequeue();
-  // dequeue();
-  //  dequeue();
-
-  display();
-
-  // dequeue()
-  // dequeue()
-  // dequeue()
-  // display()
-  // front()
-
-  // dequeue()
-  // display()
-  // rear()
-  pop();
-  display();
-  rear();
-  front()
-  dequeue()
-  display()
-  rear()
-  front()
-  // dequeue()
-  pop()
-  display()
-  rear()
-  front()
 </script>
