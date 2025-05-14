@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIRCULAR QUEUE</title>
+  </head>
+  <body>
+    <h1>CIRCULAR QUEUE</h1>
+  </body>
+</html>
+
+<script>
+  let queue = [];
+  let maxSize = 5;
+  let currentSize = 0;
+  let rear = -1;
+  let front = -1;
+
+  const enqueue = (x) => {
+    if (currentSize < maxSize) {
+      if (rear == maxSize - 1) {
+        rear = 0;
+      } else {
+        rear++;
+      }
+
+      queue[rear] = x;
+      currentSize++;
+
+      if (front == -1) {
+        front = rear;
+      }
+    }
+  };
+
+  const dequeue = () => {
+    if (currentSize > 0) {
+      queue[front] = null;
+
+      if (front == maxSize - 1) {
+        front = 0;
+      } else {
+        front++;
+      }
+      currentSize--;
+    } else {
+      front = -1;
+      rear = -1;
+      alert("Queue is already empty");
+    }
+  };
+
+  const display = () => {
+    console.log(queue);
+    console.log("currentSize= ", currentSize);
+    console.log("rear= ", rear);
+    console.log("front= ", front);
+  };
+
+  enqueue(10);
+  enqueue(20);
+  enqueue(30);
+  dequeue();
+  dequeue();
+  // enqueue(30);
+  enqueue(40);
+  enqueue(50);
+  enqueue(100);
+  enqueue(200);
+  // enqueue(100);
+  display();
+</script>
