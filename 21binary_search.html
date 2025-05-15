@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINARY SEARCH</title>
+</head>
+<body>
+    <h1>BINARY SEARCH</h1>
+    <p>Array should be sorted</p>
+    
+</body>
+</html>
+
+<script>
+    let data = [13, 5, 21, 9, 56, 45, 98, 68]
+
+    // data should be sorted
+    data = data.sort((a,b)=>{return a-b});
+    console.log(data);                      // [5, 9, 13, 21]
+
+    let find = 68
+    ;
+
+    let start = 0;
+    let end = data.length-1;
+    let position;
+
+    while(start <= end){                    // if array is empty, them start=0 and end=-1, then code will not run
+        let mid = Math.floor((start+end)/2);
+
+        if(find == data[mid]){
+            position = mid
+            break;
+        }
+        else if(find < data[mid]){
+            end = mid-1
+        }
+        else{
+            start = mid+1;
+        }
+    }
+    console.log(position);
+    
+    
+</script>
